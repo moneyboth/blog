@@ -1,5 +1,10 @@
-baseURL = "https://github.com/moneyboth/blog/.com/"
+baseURL = "https://moneyboth.com/"
 languageCode = "en-us"
 title = "Blog"
-theme = "ananke"
+theme = "hugo-theme-stack"
 paginate = 5
+
+[params]
+  author = "MoneyBoth"
+  description = "A simple blog about money and smart thinking"
+  github = "https://github.com/moneyboth/blog"
