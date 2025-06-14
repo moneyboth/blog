@@ -27,7 +27,7 @@
 
     header {
       margin-top: 2rem;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
 
     header h1 {
@@ -40,7 +40,7 @@
     header p {
       font-size: 1rem;
       color: #444;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       white-space: pre-line;
     }
 
@@ -124,7 +124,6 @@
       margin-bottom: 2rem;
     }
 
-    /* Toggle button */
     label[for="dark-toggle"] {
       position: fixed;
       top: 1rem;
@@ -142,10 +141,15 @@
       display: none;
     }
 
-    /* Dark theme */
-    #dark-toggle:checked ~ .page {
+    /* Dark Mode */
+    #dark-toggle:checked ~ .page,
+    #dark-toggle:checked ~ .page * {
       background-color: #121212;
       color: #f0f0f0;
+    }
+
+    #dark-toggle:checked ~ .page body {
+      background-color: #121212;
     }
 
     #dark-toggle:checked ~ .page header h1,
@@ -175,7 +179,7 @@
 </head>
 <body>
   <input type="checkbox" id="dark-toggle">
-  <label for="dark-toggle">🌙 Toggle Dark Mode</label>
+  <label for="dark-toggle">Dark Mode</label>
 
   <div class="page">
     <header>
