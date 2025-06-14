@@ -13,21 +13,16 @@
       margin: 0; 
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
         Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      background: #fff;
+      background: #ffffff;
       color: #1a1a1a;
       line-height: 1.6;
       transition: background 0.3s, color 0.3s;
     }
 
-    header, main, footer {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-
     header {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
+      max-width: 720px;
+      margin: 2rem auto 2rem;
+      padding: 0 1rem;
     }
 
     header h1 {
@@ -64,7 +59,9 @@
     }
 
     main {
-      margin-bottom: 4rem;
+      max-width: 720px;
+      margin: 0 auto 4rem;
+      padding: 0 1rem;
     }
 
     main section h2 {
@@ -118,10 +115,12 @@
     }
 
     footer {
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      padding: 0 1rem;
       text-align: center;
       font-size: 0.875rem;
       color: #aaa;
-      margin-bottom: 2rem;
     }
 
     label[for="dark-toggle"] {
@@ -141,93 +140,99 @@
       display: none;
     }
 
-    /* Dark Mode */
-    #dark-toggle:checked ~ .page,
-    #dark-toggle:checked ~ .page * {
-      background-color: #121212;
+    /* DARK MODE FIX */
+    body.dark {
+      background: #121212;
       color: #f0f0f0;
     }
 
-    #dark-toggle:checked ~ .page body {
-      background-color: #121212;
-    }
-
-    #dark-toggle:checked ~ .page header h1,
-    #dark-toggle:checked ~ .page main section h2 {
+    body.dark header h1,
+    body.dark main section h2 {
       color: #f0f0f0;
     }
 
-    #dark-toggle:checked ~ .page header p,
-    #dark-toggle:checked ~ .page nav a,
-    #dark-toggle:checked ~ .page time,
-    #dark-toggle:checked ~ .page footer {
+    body.dark header p,
+    body.dark nav a,
+    body.dark time,
+    body.dark footer {
       color: #bbb;
     }
 
-    #dark-toggle:checked ~ .page ul.notes-list li {
+    body.dark ul.notes-list li {
       background: #1e1e1e;
     }
 
-    #dark-toggle:checked ~ .page ul.notes-list li:hover {
+    body.dark ul.notes-list li:hover {
       background: #2a2a2a;
     }
 
-    #dark-toggle:checked ~ .page ul.notes-list a {
-      color: #fff;
+    body.dark ul.notes-list a {
+      color: #ffffff;
     }
   </style>
 </head>
 <body>
-  <input type="checkbox" id="dark-toggle">
-  <label for="dark-toggle">Dark Mode</label>
+  <input type="checkbox" id="dark-toggle" onchange="document.body.classList.toggle('dark')">
+  <label for="dark-toggle">🌙 Toggle Dark Mode</label>
 
-  <div class="page">
-    <header>
-      <h1>Welcome to My Notes</h1>
-      <p>
-        Making money is a skill. I'm convinced you can go from making $0 a day to $100K if you put in the work. But it comes down to how you approach it.
+  <header>
+    <h1>Welcome to My Notes</h1>
+    <p>
+      Making money is a skill. I'm convinced you can go from making $0 a day to $100K if you put in the work. But it comes down to how you approach it.
 
-        Taking the time to learn this skill and apply it is what matters most.
+      Taking the time to learn this skill and apply it is what matters most.
 
-        Let's start with the basics:
+      Let's start with the basics:
 
-        1. What are you good at? 
-        2. What market do you want to serve? 
-        3. What are you interested in most?
+      1. What are you good at? 
+      2. What market do you want to serve? 
+      3. What are you interested in most?
 
-        It's not a question of passion it's a question of 'interest'. Taking the time to truly know yourself and what you like or dislike. Could you sit behind a computer for 8 hours? Or do you want to be outside?
-      </p>
-      <nav>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+      It's not a question of passion it's a question of 'interest'. Taking the time to truly know yourself and what you like or dislike. Could you sit behind a computer for 8 hours? Or do you want to be outside?
+    </p>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-      <section>
-        <h2>Latest Notes</h2>
-        <ul class="notes-list">
-          <li>
-            <a href="note1.html">The Skill of Making Money</a>
-            <time datetime="2025-06-14">Jun 14, 2025</time>
-          </li>
-          <li>
-            <a href="note2.html">Finding Your Market</a>
-            <time datetime="2025-06-12">Jun 12, 2025</time>
-          </li>
-          <li>
-            <a href="note3.html">Sidehustles Keep You In Motion</a>
-            <time datetime="2025-06-11">Jun 11, 2025</time>
-          </li>
-        </ul>
-      </section>
-    </main>
+  <main>
+    <section>
+      <h2>Latest Notes</h2>
+      <ul class="notes-list">
+        <li>
+          <a href="note1.html">The Skill of Making Money</a>
+          <time datetime="2025-06-14">Jun 14, 2025</time>
+        </li>
+        <li>
+          <a href="note2.html">Finding Your Market</a>
+          <time datetime="2025-06-12">Jun 12, 2025</time>
+        </li>
+        <li>
+          <a href="note3.html">Sidehustles Keep You In Motion</a>
+          <time datetime="2025-06-11">Jun 11, 2025</time>
+        </li>
+      </ul>
+    </section>
+  </main>
 
-    <footer>
-      <p>&copy; 2025 Money Both</p>
-    </footer>
-  </div>
+  <footer>
+    <p>&copy; 2025 Money Both</p>
+  </footer>
+
+  <script>
+    // Optional: Keep dark mode toggle remembered (you can remove this if not wanted)
+    const toggle = document.getElementById('dark-toggle');
+    if (localStorage.getItem('dark') === 'true') {
+      document.body.classList.add('dark');
+      toggle.checked = true;
+    }
+    toggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('dark', toggle.checked);
+    });
+  </script>
 </body>
 </html>
