@@ -171,6 +171,53 @@
     }
   </style>
 </head>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const regex = /\[\[([^\]]+)\]\]/g;
+
+    function slugify(text) {
+      return text.toLowerCase().replace(/\s+/g, '-');
+    }
+
+    function linkify(node) {
+      if (node.nodeType === 3) { // text node
+        const matches = [...node.textContent.matchAll(regex)];
+        if (matches.length) {
+          const parent = node.parentNode;
+          const frag = document.createDocumentFragment();
+          let lastIndex = 0;
+
+          for (const match of matches) {
+            const [fullMatch, noteTitle] = match;
+            const index = match.index;
+
+            // Text before the match
+            frag.appendChild(document.createTextNode(node.textContent.slice(lastIndex, index)));
+
+            // Create the link
+            const a = document.createElement('a');
+            a.href = slugify(noteTitle) + '.html';
+            a.textContent = noteTitle;
+            a.style.color = '#3a86ff'; // optional styling
+            frag.appendChild(a);
+
+            lastIndex = index + fullMatch.length;
+          }
+          // Text after last match
+          frag.appendChild(document.createTextNode(node.textContent.slice(lastIndex)));
+
+          parent.replaceChild(frag, node);
+        }
+      } else if (node.nodeType === 1 && node.childNodes) { // element node
+        for (const child of Array.from(node.childNodes)) {
+          linkify(child);
+        }
+      }
+    }
+
+    linkify(document.body);
+  });
+</script>  
 <body>
   <input type="checkbox" id="dark-toggle" onchange="document.body.classList.toggle('dark')">
   <label for="dark-toggle">🌙 Toggle Dark Mode</label>
@@ -189,6 +236,8 @@
       3. What are you interested in most?
 
       It's not a question of passion it's a question of 'interest'. Taking the time to truly know yourself and what you like or dislike. Could you sit behind a computer for 8 hours? Or do you want to be outside?
+    
+      To learn more, see [[Finding Your Market]] and [[Sidehustles Keep You In Motion]].
     </p>
     <nav>
       <ul>
