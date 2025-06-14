@@ -1,7 +1,8 @@
 baseURL = "https://moneyboth.com/"
 languageCode = "en-us"
 title = "Blog"
-paginate = 5
+[pagination]
+  pagerSize = 10
 
 [params]
   author = "MoneyBoth"
