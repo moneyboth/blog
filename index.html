@@ -1,208 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Money Both - Earn & Save</title>
-<style>
-  /* Reset & base */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0; 
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: #fff;
-    color: #1a1a1a;
-    line-height: 1.6;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Money Both - Earn & Save</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
-  header {
-    max-width: 720px;
-    margin: 2rem auto 3rem;
-    padding: 0 1rem;
-  }
+    body {
+      margin: 0; 
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
 
-  header h1 {
-    font-weight: 700;
-    font-size: 2.25rem;
-    margin-bottom: 0.5rem;
-    color: #111;
-  }
+    header, main, footer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
 
-  header p {
-    font-size: 1rem;
-    color: #444;
-    margin-bottom: 1.5rem;
-    white-space: pre-line;
-  }
+    header {
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+    }
 
-  nav ul {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+    header h1 {
+      font-weight: 700;
+      font-size: 2.25rem;
+      margin-bottom: 0.5rem;
+      color: #111;
+    }
 
-  nav a {
-    text-decoration: none;
-    color: #3a86ff;
-    font-weight: 600;
-    transition: color 0.2s ease;
-  }
-  nav a:hover {
-    color: #1c4ed8;
-  }
+    header p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
 
-  main {
-    max-width: 720px;
-    margin: 0 auto 4rem;
-    padding: 0 1rem;
-  }
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-  main section h2 {
-    font-weight: 700;
-    font-size: 1.5rem;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    color: #222;
-  }
+    nav a {
+      text-decoration: none;
+      color: #3a86ff;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
 
-  ul.notes-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+    nav a:hover {
+      color: #1c4ed8;
+    }
 
-  ul.notes-list li {
-    background: #f9f9f9;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgb(0 0 0 / 0.05);
-    padding: 1rem 1.25rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.2s ease;
-  }
-  ul.notes-list li:hover {
-    background: #e6f0ff;
-  }
+    main {
+      margin-bottom: 4rem;
+    }
 
-  ul.notes-list a {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #0f172a;
-    text-decoration: none;
-    flex-grow: 1;
-  }
-  ul.notes-list a:hover {
-    text-decoration: underline;
-  }
+    main section h2 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
 
-  time {
-    font-size: 0.875rem;
-    color: #888;
-    margin-left: 1rem;
-    white-space: nowrap;
-  }
+    ul.notes-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-  footer {
-    max-width: 720px;
-    margin: 0 auto 2rem;
-    padding: 0 1rem;
-    text-align: center;
-    font-size: 0.875rem;
-    color: #aaa;
-  }
+    ul.notes-list li {
+      background: #f9f9f9;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgb(0 0 0 / 0.05);
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.2s ease;
+    }
 
-  body {
-    margin: 0;
-    font-family: sans-serif;
-    transition: background 0.3s, color 0.3s;
-  }
+    ul.notes-list li:hover {
+      background: #e6f0ff;
+    }
 
-  /* Default Light Theme */
-  body {
-    background: #ffffff;
-    color: #000000;
-  }
+    ul.notes-list a {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #0f172a;
+      text-decoration: none;
+      flex-grow: 1;
+    }
 
-  /* Dark Theme when checkbox is checked */
-  #dark-toggle:checked ~ main {
-    background: #121212;
-    color: #f0f0f0;
-  }
+    ul.notes-list a:hover {
+      text-decoration: underline;
+    }
 
-  label[for="dark-toggle"] {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    background: #ccc;
-    padding: 0.5rem 1rem;
-    border-radius: 999px;
-    cursor: pointer;
-    user-select: none;
-    font-size: 0.9rem;
-  }
+    time {
+      font-size: 0.875rem;
+      color: #888;
+      margin-left: 1rem;
+      white-space: nowrap;
+    }
 
-  #dark-toggle {
-    display: none;
-  }
-  
-</style>
+    footer {
+      text-align: center;
+      font-size: 0.875rem;
+      color: #aaa;
+      margin-bottom: 2rem;
+    }
+
+    /* Toggle button */
+    label[for="dark-toggle"] {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: #ccc;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      user-select: none;
+      font-size: 0.9rem;
+      z-index: 999;
+    }
+
+    #dark-toggle {
+      display: none;
+    }
+
+    /* Dark theme */
+    #dark-toggle:checked ~ .page {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    #dark-toggle:checked ~ .page header h1,
+    #dark-toggle:checked ~ .page main section h2 {
+      color: #f0f0f0;
+    }
+
+    #dark-toggle:checked ~ .page header p,
+    #dark-toggle:checked ~ .page nav a,
+    #dark-toggle:checked ~ .page time,
+    #dark-toggle:checked ~ .page footer {
+      color: #bbb;
+    }
+
+    #dark-toggle:checked ~ .page ul.notes-list li {
+      background: #1e1e1e;
+    }
+
+    #dark-toggle:checked ~ .page ul.notes-list li:hover {
+      background: #2a2a2a;
+    }
+
+    #dark-toggle:checked ~ .page ul.notes-list a {
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-<input type="checkbox" id="dark-toggle">
-<label for="dark-toggle">🌙 Toggle Dark Mode</label>
+  <input type="checkbox" id="dark-toggle">
+  <label for="dark-toggle">🌙 Toggle Dark Mode</label>
 
-<header>
-  <main>
-  <h1>Welcome to My Notes</h1>
-  <p>
-    Making money is a skill. I'm convinced you can go from making $0 a day to $100K if you put in the work. But it comes down to how you approach it. 
+  <div class="page">
+    <header>
+      <h1>Welcome to My Notes</h1>
+      <p>
+        Making money is a skill. I'm convinced you can go from making $0 a day to $100K if you put in the work. But it comes down to how you approach it.
 
-    Taking the time to learn this skill and apply it is what matters most. 
+        Taking the time to learn this skill and apply it is what matters most.
 
-    Let's start with the basics: 
+        Let's start with the basics:
 
-    1. What are you good at? 
-    2. What market do you want to serve? 
-    3. What are you interested in most? 
+        1. What are you good at? 
+        2. What market do you want to serve? 
+        3. What are you interested in most?
 
-    It's not a question of passion it's a question of 'interest'. Taking the time to truly know yourself and what you like or dislike. Could you sit behind a computer for 8 hours? Or do you want to be outside?
-  </p>
-  <nav>
-    <ul>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+        It's not a question of passion it's a question of 'interest'. Taking the time to truly know yourself and what you like or dislike. Could you sit behind a computer for 8 hours? Or do you want to be outside?
+      </p>
+      <nav>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
     <main>
-  <section>
-    <h2>Latest Notes</h2>
-    <ul class="notes-list">
-      <li>
-        <a href="note1.html">The Skill of Making Money</a>
-        <time datetime="2025-06-14">Jun 14, 2025</time>
-      </li>
-      <li>
-        <a href="note2.html">Finding Your Market</a>
-        <time datetime="2025-06-12">Jun 12, 2025</time>
-      </li>
-      <li>
-        <a href="note3.html">Sidehustles Keep You In Motion</a>
-        <time datetime="2025-06-11">Jun 11, 2025</time>
-      </li>
-    </ul>
-  </section>
-  </main>
-<footer>
-  <p>&copy; 2025 Money Both</p>
-</footer>
+      <section>
+        <h2>Latest Notes</h2>
+        <ul class="notes-list">
+          <li>
+            <a href="note1.html">The Skill of Making Money</a>
+            <time datetime="2025-06-14">Jun 14, 2025</time>
+          </li>
+          <li>
+            <a href="note2.html">Finding Your Market</a>
+            <time datetime="2025-06-12">Jun 12, 2025</time>
+          </li>
+          <li>
+            <a href="note3.html">Sidehustles Keep You In Motion</a>
+            <time datetime="2025-06-11">Jun 11, 2025</time>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Money Both</p>
+    </footer>
+  </div>
 </body>
 </html>
