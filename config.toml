@@ -1,6 +1,7 @@
 baseURL = "https://moneyboth.com/"
 languageCode = "en-us"
 title = "Blog"
+theme = "ananke"
 [pagination]
   pagerSize = 10
 
