@@ -5,123 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Money Both - Earn & Save</title>
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0; 
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      background: #ffffff;
-      color: #1a1a1a;
-      line-height: 1.6;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    header {
-      max-width: 720px;
-      margin: 2rem auto 2rem;
-      padding: 0 1rem;
-    }
-
-    header h1 {
-      font-weight: 700;
-      font-size: 2.25rem;
-      margin-bottom: 0.5rem;
-      color: #111;
-    }
-
-    header p {
-      font-size: 1rem;
-      color: #444;
-      margin-bottom: 1rem;
-      white-space: pre-line;
-    }
-
-    nav ul {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #3a86ff;
-      font-weight: 600;
-      transition: color 0.2s ease;
-    }
-
-    nav a:hover {
-      color: #1c4ed8;
-    }
-
-    main {
-      max-width: 720px;
-      margin: 0 auto 4rem;
-      padding: 0 1rem;
-    }
-
-    main section h2 {
-      font-weight: 700;
-      font-size: 1.5rem;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-      color: #222;
-    }
-
-    ul.notes-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    ul.notes-list li {
-      background: #f9f9f9;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 1px 4px rgb(0 0 0 / 0.05);
-      padding: 1rem 1.25rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background-color 0.2s ease;
-    }
-
-    ul.notes-list li:hover {
-      background: #e6f0ff;
-    }
-
-    ul.notes-list a {
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: #0f172a;
-      text-decoration: none;
-      flex-grow: 1;
-    }
-
-    ul.notes-list a:hover {
-      text-decoration: underline;
-    }
-
-    time {
-      font-size: 0.875rem;
-      color: #888;
-      margin-left: 1rem;
-      white-space: nowrap;
-    }
-
-    footer {
-      max-width: 720px;
-      margin: 0 auto 2rem;
-      padding: 0 1rem;
-      text-align: center;
-      font-size: 0.875rem;
-      color: #aaa;
-    }
+    /* ... all your existing CSS ... */
 
     label[for="dark-toggle"] {
       position: fixed;
@@ -140,7 +24,7 @@
       display: none;
     }
 
-    /* DARK MODE FIX */
+    /* Dark Mode styles */
     body.dark {
       background: #121212;
       color: #f0f0f0;
@@ -171,110 +55,73 @@
     }
   </style>
 </head>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const regex = /\[\[([^\]]+)\]\]/g;
-
-    function slugify(text) {
-      return text.toLowerCase().replace(/\s+/g, '-');
-    }
-
-    function linkify(node) {
-      if (node.nodeType === 3) { // text node
-        const matches = [...node.textContent.matchAll(regex)];
-        if (matches.length) {
-          const parent = node.parentNode;
-          const frag = document.createDocumentFragment();
-          let lastIndex = 0;
-
-          for (const match of matches) {
-            const [fullMatch, noteTitle] = match;
-            const index = match.index;
-
-            // Text before the match
-            frag.appendChild(document.createTextNode(node.textContent.slice(lastIndex, index)));
-
-            // Create the link
-            const a = document.createElement('a');
-            a.href = slugify(noteTitle) + '.html';
-            a.textContent = noteTitle;
-            a.style.color = '#3a86ff'; // optional styling
-            frag.appendChild(a);
-
-            lastIndex = index + fullMatch.length;
-          }
-          // Text after last match
-          frag.appendChild(document.createTextNode(node.textContent.slice(lastIndex)));
-
-          parent.replaceChild(frag, node);
-        }
-      } else if (node.nodeType === 1 && node.childNodes) { // element node
-        for (const child of Array.from(node.childNodes)) {
-          linkify(child);
-        }
-      }
-    }
-
-    linkify(document.body);
-  });
-</script>  
 <body>
-  <input type="checkbox" id="dark-toggle" onchange="document.body.classList.toggle('dark')">
+  <input type="checkbox" id="dark-toggle" />
   <label for="dark-toggle">Dark Mode</label>
 
   <header>
-    <h1>Welcome to My Notes</h1>
-    <p>
-      Making money is a skill. I'm convinced you can go from making $0 a day to $100K if you put in the work. But it comes down to how you approach it.
-
-      Taking the time to learn this skill and apply it is what matters most.
-
-      Let's start with the basics:
-
-      1. What are you good at? 
-      2. What market do you want to serve? 
-      3. What are you interested in most?
-
-      It's not a question of passion it's a question of 'interest'. Taking the time to truly know yourself and what you like or dislike. Could you sit behind a computer for 8 hours? Or do you want to be outside?
-    
-      To learn more, see [[Finding Your Market]] and [[Sidehustles Keep You In Motion]].
-    </p>
-    <nav>
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <!-- ... header content ... -->
   </header>
   <main>
-    <section>
-      <h2>Latest Notes</h2>
-      <ul class="notes-list">
-  <li>
-    <a href="the-skill-of-making-money.html">The Skill of Making Money</a>
-    <time datetime="2025-06-14">Jun 14, 2025</time>
-  </li>
-  <li>
-    <a href="finding-your-market.html">Finding Your Market</a>
-    <time datetime="2025-06-12">Jun 12, 2025</time>
-  </li>
-  <li>
-    <a href="sidehustles-keep-you-in-motion.html">Sidehustles Keep You In Motion</a>
-    <time datetime="2025-06-11">Jun 11, 2025</time>
-  </li>
-</ul>
-    </section>
+    <!-- ... main content ... -->
   </main>
   <footer>
     <p>&copy; 2025 Money Both</p>
   </footer>
+
   <script>
-    // Optional: Keep dark mode toggle remembered (you can remove this if not wanted)
+    // Linkify script can stay here or in separate file
+    document.addEventListener("DOMContentLoaded", () => {
+      const regex = /\[\[([^\]]+)\]\]/g;
+
+      function slugify(text) {
+        return text.toLowerCase().replace(/\s+/g, '-');
+      }
+
+      function linkify(node) {
+        if (node.nodeType === 3) {
+          const matches = [...node.textContent.matchAll(regex)];
+          if (matches.length) {
+            const parent = node.parentNode;
+            const frag = document.createDocumentFragment();
+            let lastIndex = 0;
+
+            for (const match of matches) {
+              const [fullMatch, noteTitle] = match;
+              const index = match.index;
+
+              frag.appendChild(document.createTextNode(node.textContent.slice(lastIndex, index)));
+
+              const a = document.createElement('a');
+              a.href = slugify(noteTitle) + '.html';
+              a.textContent = noteTitle;
+              a.style.color = '#3a86ff';
+              frag.appendChild(a);
+
+              lastIndex = index + fullMatch.length;
+            }
+            frag.appendChild(document.createTextNode(node.textContent.slice(lastIndex)));
+
+            parent.replaceChild(frag, node);
+          }
+        } else if (node.nodeType === 1 && node.childNodes) {
+          for (const child of Array.from(node.childNodes)) {
+            linkify(child);
+          }
+        }
+      }
+
+      linkify(document.body);
+    });
+
+    // Dark mode toggle with localStorage persistence
     const toggle = document.getElementById('dark-toggle');
+
     if (localStorage.getItem('dark') === 'true') {
       document.body.classList.add('dark');
       toggle.checked = true;
     }
+
     toggle.addEventListener('change', () => {
       document.body.classList.toggle('dark');
       localStorage.setItem('dark', toggle.checked);
