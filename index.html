@@ -118,11 +118,49 @@
     font-size: 0.875rem;
     color: #aaa;
   }
+
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  /* Default Light Theme */
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  /* Dark Theme when checkbox is checked */
+  #dark-toggle:checked ~ main {
+    background: #121212;
+    color: #f0f0f0;
+  }
+
+  label[for="dark-toggle"] {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: #ccc;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.9rem;
+  }
+
+  #dark-toggle {
+    display: none;
+  }
+  
 </style>
 </head>
 <body>
+<input type="checkbox" id="dark-toggle">
+<label for="dark-toggle">🌙 Toggle Dark Mode</label>
 
 <header>
+  <main>
   <h1>Welcome to My Notes</h1>
   <p>
     Making money is a skill. I'm convinced you can go from making $0 a day to $100K if you put in the work. But it comes down to how you approach it. 
@@ -137,6 +175,7 @@
 
     It's not a question of passion it's a question of 'interest'. Taking the time to truly know yourself and what you like or dislike. Could you sit behind a computer for 8 hours? Or do you want to be outside?
   </p>
+  </main>
   <nav>
     <ul>
       <li><a href="about.html">About</a></li>
