@@ -1,7 +1,6 @@
 baseURL = "https://moneyboth.com/"
 languageCode = "en-us"
 title = "Blog"
-theme = "hugo-theme-stack"
 paginate = 5
 
 [params]
