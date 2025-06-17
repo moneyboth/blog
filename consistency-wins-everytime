@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reselling Podcasts With Great Wisdom</title>
+  <style>
+    body {
+      max-width: 720px;
+      margin: 3rem auto;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      padding: 0 1rem;
+      color: #1a1a1a;
+      background: #fff;
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #111;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      color: #444;
+      white-space: pre-line;
+    }
+    a.back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #3a86ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a.back-link:hover {
+      text-decoration: underline;
+      color: #1c4ed8;
+    }
+  </style>
+</head>
+<body>
+  <article>
+    <h1>Consistency Wins Every Time</h1>
+    <p>
+      
+No matter what you do, if you do it consistently you'll get a win. 
+
+This is something I've always believed in and it continues to remain true. 
+
+'Where preparation meets opportunity' suggests that 'luck' isn't real it's simply the result of being prepared when an opportunity arises. 
+
+Another one, 'always stay ready' is along the similar thought process. 
+
+Ask yourself the following questions 
+
+1. Are you staying consistent on one thing? 
+2. What's the most consistent thing you've done lately? 
+
+See many folks can't remember or think of what they've been doing 'consistently'. And sometimes you need to audit your time to find out. 
+
+Put that todo list together every day - make it a habit
+- Check this off when done
+- Check this other item off when done 
+- Check this off when both are done
+
+Think of it as a mountain you are climbing and each item crossed off the list becomes another win on your record. 
+      
+    </p>
+    <a href="index.html" class="back-link">&larr; Back to Notes</a>
+
+
+  </article>
+</body>
+</html>
